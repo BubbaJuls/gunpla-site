@@ -1,12 +1,131 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gunpla Hobby Store</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gunpla Hobby PH — Authentic Bandai Gunpla Kits</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page" data-page="home">
+  <div id="site-header"></div>
+
+  <main>
+    <div id="hero-carousel"></div>
+
+    <section class="categories">
+      <div class="container">
+        <div class="categories__grid">
+          <a href="catalog.html" class="category-chip"><span class="category-chip__icon">All</span>All Kits</a>
+          <a href="catalog.html?grade=RG" class="category-chip"><span class="category-chip__icon">RG</span>Real Grade</a>
+          <a href="catalog.html?grade=HG" class="category-chip category-chip--soon"><span class="category-chip__icon">HG</span>High Grade <small>Soon</small></a>
+          <a href="catalog.html?grade=MG" class="category-chip category-chip--soon"><span class="category-chip__icon">MG</span>Master Grade <small>Soon</small></a>
+          <a href="catalog.html?grade=PG" class="category-chip category-chip--soon"><span class="category-chip__icon">PG</span>Perfect Grade <small>Soon</small></a>
+          <a href="catalog.html" class="category-chip"><span class="category-chip__icon">%</span>On Sale</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="spotlight">
+          <span class="spotlight__label">Curated picks</span>
+          <h3>Weekly Highlights</h3>
+          <p>Hand-picked kits with the best value this week — no rush, just solid deals.</p>
+        </div>
+        <div id="weekly-picks-products" class="product-grid"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2>Featured Gunplas</h2>
+          <a href="catalog.html">See All →</a>
+        </div>
+        <div id="featured-products" class="product-grid"></div>
+      </div>
+    </section>
+
+    <div class="container promo-grid">
+      <a href="catalog.html?grade=RG" class="promo-banner">
+        <img src="public/images/rg-unicorn.png" alt="RG Unicorn Gundam" />
+        <div class="promo-banner__overlay"></div>
+        <div class="promo-banner__content">
+          <h3>Real Grade Collection</h3>
+          <p>Precision engineering in 1/144 scale</p>
+          <span class="btn btn--primary btn--sm">Shop RG</span>
+        </div>
+      </a>
+      <a href="product.html#id=5" class="promo-banner">
+        <img src="public/images/rg-rx-78-2.png" alt="RG RX-78-2" />
+        <div class="promo-banner__overlay"></div>
+        <div class="promo-banner__content">
+          <h3>Start Your Build</h3>
+          <p>Classic RX-78-2 — perfect first RG kit</p>
+          <span class="btn btn--primary btn--sm">View Kit</span>
+        </div>
+      </a>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2>Community Favorites</h2>
+          <a href="catalog.html">View More →</a>
+        </div>
+        <div id="bestseller-products" class="product-grid"></div>
+      </div>
+    </section>
+
+    <section class="section section--coming-soon">
+      <div class="container">
+        <div class="section__head">
+          <h2>Coming Soon</h2>
+          <p class="section__sub">More grades on the way — stay tuned.</p>
+        </div>
+        <div class="coming-soon-grid">
+          <article class="coming-soon-card">
+            <span class="coming-soon-card__grade">HG</span>
+            <h3>High Grade</h3>
+            <p>Quick, affordable builds perfect for beginners and practice panel lining.</p>
+            <span class="coming-soon-card__badge">Photos & listings soon</span>
+          </article>
+          <article class="coming-soon-card">
+            <span class="coming-soon-card__grade">MG</span>
+            <h3>Master Grade</h3>
+            <p>Larger scale, inner frames, and flagship detail for serious builders.</p>
+            <span class="coming-soon-card__badge">Photos & listings soon</span>
+          </article>
+          <article class="coming-soon-card">
+            <span class="coming-soon-card__grade">PG</span>
+            <h3>Perfect Grade</h3>
+            <p>Premium kits with incredible size and engineering — the ultimate display pieces.</p>
+            <span class="coming-soon-card__badge">Photos & listings soon</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="trust-strip">
+          <div class="trust-item"><div class="trust-item__icon">📦</div><strong>Free Shipping</strong>Orders over ₱3,000</div>
+          <div class="trust-item"><div class="trust-item__icon">✓</div><strong>100% Authentic</strong>Official Bandai kits</div>
+          <div class="trust-item"><div class="trust-item__icon">🛡️</div><strong>Secure Checkout</strong>Safe payment options</div>
+          <div class="trust-item"><div class="trust-item__icon">💬</div><strong>Support</strong>Fast customer service</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
 </html>

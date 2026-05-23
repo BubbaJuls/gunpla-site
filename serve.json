@@ -1,0 +1,16 @@
+{
+  "cleanUrls": false,
+  "directoryListing": false,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/", "destination": "/index.html", "type": 302 }
+  ],
+  "rewrites": [
+    { "source": "/catalog", "destination": "/catalog.html" },
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/cart", "destination": "/cart.html" },
+    { "source": "/checkout", "destination": "/checkout.html" },
+    { "source": "/product", "destination": "/product.html" }
+  ]
+}

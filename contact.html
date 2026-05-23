@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Gunpla Hobby PH</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page" data-page="contact">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p>Questions, custom orders, or bulk inquiries — we are happy to help.</p>
+      </div>
+    </section>
+
+    <div class="container contact-grid" style="padding-bottom:2rem">
+      <div class="content-card">
+        <h2 style="margin-top:0">Get in Touch</h2>
+        <p>Reach out for stock checks, pre-orders, or partnership inquiries. We typically respond within 1–2 business days.</p>
+        <p><strong>Email:</strong> hello@gunplahobby.ph</p>
+        <p><strong>Hours:</strong> Mon–Sat, 9:00 AM – 6:00 PM (PHT)</p>
+        <div class="footer__social" style="margin-top:1rem">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+          <span style="color:var(--border)">·</span>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+        </div>
+      </div>
+
+      <form id="contact-form" class="checkout-form">
+        <h2 style="margin-top:0">Send a Message</h2>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your name" />
+        </div>
+        <div class="form-group">
+          <label for="contact-email">Email</label>
+          <input type="email" id="contact-email" name="email" required placeholder="you@email.com" />
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject">
+            <option>General Inquiry</option>
+            <option>Order Status</option>
+            <option>Pre-Order Request</option>
+            <option>Wholesale / Bulk</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required placeholder="How can we help?"></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+      </form>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
