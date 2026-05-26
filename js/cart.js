@@ -10,9 +10,9 @@ var Cart = {
     }
   },
 
-  saveItems: function (items) {
+  saveItems: function (items, meta) {
     localStorage.setItem(CART_KEY, JSON.stringify(items));
-    document.dispatchEvent(new CustomEvent('cart-updated'));
+    document.dispatchEvent(new CustomEvent('cart-updated', { detail: meta || {} }));
   },
 
   getItemCount: function () {
@@ -36,7 +36,7 @@ var Cart = {
     });
     if (found) found.quantity = Math.min(99, found.quantity + quantity);
     else items.push({ productId: productId, quantity: quantity });
-    this.saveItems(items);
+    this.saveItems(items, { pulse: true });
   },
 
   updateQuantity: function (productId, quantity) {

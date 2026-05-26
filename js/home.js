@@ -5,7 +5,6 @@ function initHomePage() {
   if (featured) {
     featured.innerHTML = getFeaturedProducts().map(productCardHTML).join('');
     bindAddToCartButtons(featured);
-    animateProductGrid(featured);
   }
 
   var bestsellers = document.getElementById('bestseller-products');
@@ -15,7 +14,6 @@ function initHomePage() {
     }).slice(0, 4);
     bestsellers.innerHTML = sorted.map(productCardHTML).join('');
     bindAddToCartButtons(bestsellers);
-    animateProductGrid(bestsellers);
   }
 
   var weekly = document.getElementById('weekly-picks-products');
@@ -25,6 +23,5 @@ function initHomePage() {
     }).slice(0, 4);
     weekly.innerHTML = deals.map(productCardHTML).join('');
     bindAddToCartButtons(weekly);
-    animateProductGrid(weekly);
   }
 }

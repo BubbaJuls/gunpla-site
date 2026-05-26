@@ -93,11 +93,16 @@ function socialLinks() {
   );
 }
 
-function updateCartBadge() {
+function updateCartBadge(pulse) {
   var count = Cart.getItemCount();
   document.querySelectorAll('[data-cart-badge]').forEach(function (badge) {
     badge.textContent = count > 99 ? '99+' : count;
     badge.classList.toggle('cart-badge--hidden', count === 0);
+    if (pulse && count > 0) {
+      badge.classList.remove('cart-badge--pulse');
+      void badge.offsetWidth;
+      badge.classList.add('cart-badge--pulse');
+    }
   });
 }
 
@@ -155,8 +160,10 @@ function showToast(message) {
 function initSiteChrome() {
   renderSiteHeader();
   renderSiteFooter();
-  updateCartBadge();
-  document.addEventListener('cart-updated', updateCartBadge);
+  updateCartBadge(false);
+  document.addEventListener('cart-updated', function (e) {
+    updateCartBadge(e.detail && e.detail.pulse);
+  });
 }
 
 function pageHero(title, subtitle, breadcrumb) {

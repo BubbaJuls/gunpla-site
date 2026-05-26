@@ -110,8 +110,5 @@ function initProductPage() {
     }).slice(0, 4);
     related.innerHTML = others.map(productCardHTML).join('');
     bindAddToCartButtons(related);
-    animateProductGrid(related);
   }
-
-  registerScrollElement(root.querySelector('.product-detail__grid'));
 }

@@ -83,7 +83,6 @@ function initShopPage() {
       return productCardHTML(p);
     }).join('');
     bindAddToCartButtons(grid);
-    animateProductGrid(grid);
   }
 
   if (searchInput) {

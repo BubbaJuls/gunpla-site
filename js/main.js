@@ -13,8 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
   else if (page === 'cart') initCartPage();
   else if (page === 'checkout') initCheckoutPage();
   else if (page === 'contact') initContactForm();
-
-  requestAnimationFrame(refreshDynamicAnimations);
 });
 
 function initContactForm() {
