@@ -1,5 +1,5 @@
 function initHomePage() {
-  buildHeroVideo(document.getElementById('hero-video'));
+  buildHeroCarousel(document.getElementById('hero-carousel'));
 
   var featured = document.getElementById('featured-products');
   if (featured) {

@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var page = document.body.getAttribute('data-page');
 
-  if (page === 'home') initHomePage();
+  if (page === 'anniversary') initAnniversaryPage();
+  else if (page === 'home') initHomePage();
   else if (page === 'shop') initShopPage();
   else if (page === 'product') {
     initProductPage();

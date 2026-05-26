@@ -2,7 +2,7 @@ var CHATBOT_FAQ = [
   {
     keys: ['hello', 'hi', 'hey', 'help', 'start'],
     answer:
-      'Hi! I\'m the Gunpla Hobby PH assistant. Ask about shipping, payments, grades in stock, or how to order—or tap a quick question below.',
+      'Hi! I\'m the Gunpla Hobby PH assistant. We\'re running a <strong>Gundam 50th Anniversary site-wide sale</strong>—ask about shipping, payments, grades in stock, or how to order.',
   },
   {
     keys: ['ship', 'shipping', 'delivery', 'courier', 'free shipping'],

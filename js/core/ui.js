@@ -9,8 +9,14 @@ function renderSiteHeader() {
   var page = getCurrentPage();
   var count = Cart.getItemCount();
 
+  var saleTitle = typeof SITE_SALE_TITLE !== 'undefined' ? SITE_SALE_TITLE : 'Gundam 50th Anniversary Site-Wide Sale';
+
   el.innerHTML =
-    '<div class="top-bar">Authentic Bandai Gunpla · Free shipping on orders over ₱3,000</div>' +
+    '<div class="top-bar top-bar--sale">' +
+    '<span class="top-bar__badge" aria-hidden="true">50th</span>' +
+    '<span class="top-bar__text">' +
+    saleTitle +
+    ' · Free shipping on orders over ₱3,000</span></div>' +
     '<header class="header">' +
     '<div class="header__inner container">' +
     '<a href="index.html" class="logo">' +
@@ -22,8 +28,9 @@ function renderSiteHeader() {
     '<svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>' +
     '</button></form>' +
     '<nav class="nav" aria-label="Main">' +
-    navLink('index.html', 'Home', page) +
-    navLink('catalog.html', 'Shop', page) +
+    navLink('index.html', '50th Anniversary', page) +
+    navLink('shop.html', 'Shop Home', page) +
+    navLink('catalog.html', 'Catalog', page) +
     navLink('about.html', 'About', page) +
     navLink('contact.html', 'Contact', page) +
     '<a href="cart.html" class="nav__cart' + (page === 'cart.html' ? ' active' : '') + '" aria-label="Cart, ' + count + ' items">' +
@@ -108,7 +115,7 @@ function updateCartBadge(pulse) {
 
 function productCardHTML(product, variant) {
   variant = variant || 'grid';
-  var discount = discountPercent(product.price, product.originalPrice);
+  var discount = discountPercent(product);
   var link = productDetailUrl(product);
   return (
     '<article class="product-card">' +

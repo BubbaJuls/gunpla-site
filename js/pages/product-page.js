@@ -41,7 +41,7 @@ function initProductPage() {
     heroEl.innerHTML =
       '<div class="container">' +
       breadcrumbHTML([
-        { label: 'Home', href: 'index.html' },
+        { label: 'Shop Home', href: 'shop.html' },
         { label: 'Shop', href: 'catalog.html' },
         { label: product.name },
       ]) +
@@ -51,7 +51,7 @@ function initProductPage() {
   }
 
   var stats = getProductRatingDisplay(product);
-  var discount = discountPercent(product.price, product.originalPrice);
+  var discount = discountPercent(product);
   var modelSrc = productModelImage(product);
   var boxSrc = productBoxImage(product);
   var showBox = Boolean(product.boxImage) && boxSrc !== modelSrc;
