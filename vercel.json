@@ -1,0 +1,29 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "",
+  "buildCommand": "",
+  "outputDirectory": ".",
+  "redirects": [
+    { "source": "/", "destination": "/index.html", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/shop", "destination": "/shop.html" },
+    { "source": "/catalog", "destination": "/catalog.html" },
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/login", "destination": "/login.html" },
+    { "source": "/register", "destination": "/register.html" },
+    { "source": "/cart", "destination": "/cart.html" },
+    { "source": "/checkout", "destination": "/checkout.html" },
+    { "source": "/order-confirmation", "destination": "/order-confirmation.html" },
+    { "source": "/product", "destination": "/product.html" }
+  ],
+  "headers": [
+    {
+      "source": "/resources/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ]
+}

@@ -1,8 +1,9 @@
 {
   "name": "gunpla-site",
   "private": true,
+  "description": "Static Gunpla shop — HTML, CSS, and vanilla JS (no build step)",
   "scripts": {
-    "start": "serve . -l 3000",
-    "dev": "serve . -l 3000"
+    "start": "npx serve . -l 3000",
+    "dev": "npx serve . -l 3000"
   }
 }
