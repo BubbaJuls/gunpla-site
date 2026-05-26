@@ -10,6 +10,10 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+public/
+
+# Large media (add to git with LFS if needed)
+# resources/videos/*.mp4
 *.local
 
 # Editor directories and files
