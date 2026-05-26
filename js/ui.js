@@ -118,8 +118,9 @@ function productCardHTML(product, variant) {
     '<img src="' + product.image + '" alt="' + product.name + '" loading="lazy" /></a>' +
     '<div class="product-card__body">' +
     '<a href="' + link + '" class="product-card__name">' + product.name + '</a>' +
-    '<div class="product-card__rating">' + renderStars(product.rating) +
-    '<span>' + product.rating + '</span> · <span class="product-card__sold">' + product.sold + ' sold</span></div>' +
+    '<div class="product-card__rating">' +
+    renderRatingLine(getProductRatingDisplay(product), product.sold) +
+    '</div>' +
     '<div class="product-card__prices">' +
     '<span class="product-card__price">' + formatPrice(product.price) + '</span>' +
     (discount > 0 ? '<span class="product-card__original">' + formatPrice(product.originalPrice) + '</span>' : '') +
@@ -164,6 +165,7 @@ function initSiteChrome() {
   document.addEventListener('cart-updated', function (e) {
     updateCartBadge(e.detail && e.detail.pulse);
   });
+  if (typeof initChatbot === 'function') initChatbot();
 }
 
 function pageHero(title, subtitle, breadcrumb) {

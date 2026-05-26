@@ -1,3 +1,11 @@
+function updateProductRatingUI(product) {
+  var stats = getProductRatingDisplay(product);
+  var ratingEl = document.querySelector('.product-detail__rating');
+  if (ratingEl) {
+    ratingEl.innerHTML = renderRatingLine(stats, product.sold);
+  }
+}
+
 function initProductPage() {
   var id = getProductIdFromLocation();
   var slug = getProductSlugFromLocation();
@@ -42,6 +50,7 @@ function initProductPage() {
       '</div>';
   }
 
+  var stats = getProductRatingDisplay(product);
   var discount = discountPercent(product.price, product.originalPrice);
 
   root.innerHTML =
@@ -54,8 +63,9 @@ function initProductPage() {
     '<span class="product-detail__grade">' + product.grade + '</span>' +
     '<p class="product-detail__sku">SKU: ' + product.slug + '</p>' +
     '<div class="product-detail__rating">' +
-    renderStars(product.rating) +
-    '<span>' + product.rating + '</span> · <span>' + product.sold + ' sold</span></div>' +
+    renderRatingLine(stats, product.sold) +
+    '</div>' +
+    '<p class="product-detail__review-link"><a href="#product-reviews">Write a review</a></p>' +
     '<div class="product-detail__prices">' +
     '<span class="product-detail__price">' + formatPrice(product.price) + '</span>' +
     (discount > 0
@@ -103,6 +113,11 @@ function initProductPage() {
     window.location.href = 'checkout.html';
   });
 
+  initReviewsSection(product, function () {
+    updateProductRatingUI(product);
+    refreshRelatedRatings(product.id);
+  });
+
   var related = document.getElementById('related-products');
   if (related) {
     var others = PRODUCTS.filter(function (p) {
@@ -111,4 +126,21 @@ function initProductPage() {
     related.innerHTML = others.map(productCardHTML).join('');
     bindAddToCartButtons(related);
   }
+}
+
+function refreshRelatedRatings(currentProductId) {
+  var related = document.getElementById('related-products');
+  if (!related) return;
+  related.querySelectorAll('.product-card').forEach(function (card) {
+    var link = card.querySelector('.product-card__name');
+    if (!link || !link.href) return;
+    var match = link.href.match(/#id=([^&]+)/);
+    if (!match || match[1] === currentProductId) return;
+    var p = getProductById(match[1]);
+    if (!p) return;
+    var ratingEl = card.querySelector('.product-card__rating');
+    if (ratingEl) {
+      ratingEl.innerHTML = renderRatingLine(getProductRatingDisplay(p), p.sold);
+    }
+  });
 }

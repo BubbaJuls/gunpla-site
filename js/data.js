@@ -10,7 +10,7 @@ var PRODUCTS = [
     price: 2400,
     originalPrice: 2800,
     image: IMG + 'rg-strike-freedom.png',
-    rating: 4.9,
+    rating: 4.6,
     sold: 512,
     featured: true,
     description:
@@ -25,7 +25,7 @@ var PRODUCTS = [
     price: 2200,
     originalPrice: 2500,
     image: IMG + 'rg-oo-qant.png',
-    rating: 4.8,
+    rating: 4.4,
     sold: 389,
     featured: true,
     description:
@@ -40,7 +40,7 @@ var PRODUCTS = [
     price: 2300,
     originalPrice: 2600,
     image: IMG + 'rg-wing-zero-custom.png',
-    rating: 4.9,
+    rating: 4.6,
     sold: 445,
     featured: true,
     description:
@@ -55,7 +55,7 @@ var PRODUCTS = [
     price: 2600,
     originalPrice: 3000,
     image: IMG + 'rg-unicorn.png',
-    rating: 5.0,
+    rating: 4.8,
     sold: 198,
     featured: true,
     description:
@@ -70,11 +70,11 @@ var PRODUCTS = [
     price: 1800,
     originalPrice: 2100,
     image: IMG + 'rg-rx-78-2.png',
-    rating: 4.7,
+    rating: 4.6,
     sold: 892,
     featured: false,
     description:
-      'RG RX-78-2—the mobile suit that started it all, refined for modern builders. Great articulation and classic styling in a manageable build time.',
+      'RG RX-78-2 — the mobile suit that started it all, refined for modern builders. Great articulation and classic styling in a manageable build time.',
   },
   {
     id: '6',
@@ -85,7 +85,7 @@ var PRODUCTS = [
     price: 2100,
     originalPrice: 2400,
     image: IMG + 'rg-build-strike.png',
-    rating: 4.8,
+    rating: 4.4,
     sold: 367,
     featured: false,
     description:
@@ -100,7 +100,7 @@ var PRODUCTS = [
     price: 2500,
     originalPrice: 2900,
     image: IMG + 'rg-zeta-gundam.png',
-    rating: 4.8,
+    rating: 4.2,
     sold: 278,
     featured: false,
     description:
@@ -115,7 +115,7 @@ var PRODUCTS = [
     price: 2000,
     originalPrice: 2300,
     image: IMG + 'rg-full-burnern.png',
-    rating: 4.7,
+    rating: 4.6,
     sold: 301,
     featured: false,
     description:
@@ -130,7 +130,7 @@ var PRODUCTS = [
     price: 2700,
     originalPrice: 3100,
     image: IMG + 'rg-sinanju.png',
-    rating: 4.9,
+    rating: 4.6,
     sold: 224,
     featured: false,
     description:
@@ -145,7 +145,7 @@ var PRODUCTS = [
     price: 1900,
     originalPrice: 2200,
     image: IMG + 'rg-god-gundam.png',
-    rating: 4.8,
+    rating: 4.6,
     sold: 654,
     featured: false,
     description:

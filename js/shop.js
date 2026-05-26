@@ -56,7 +56,11 @@ function initShopPage() {
 
     if (sort === 'price-asc') list.sort(function (a, b) { return a.price - b.price; });
     else if (sort === 'price-desc') list.sort(function (a, b) { return b.price - a.price; });
-    else if (sort === 'rating') list.sort(function (a, b) { return b.rating - a.rating; });
+    else if (sort === 'rating') {
+      list.sort(function (a, b) {
+        return getProductRatingDisplay(b).average - getProductRatingDisplay(a).average;
+      });
+    }
     else list.sort(function (a, b) { return b.sold - a.sold; });
 
     return list;
