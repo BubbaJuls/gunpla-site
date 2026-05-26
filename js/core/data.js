@@ -5,9 +5,9 @@ var IMG_BRAND = RES + 'brand/logo.png';
 var IMG_SITE = RES + 'site/bg-ibo.jpg';
 var VIDEO_HERO = RES + 'videos/a-boy-with-gundam.mp4';
 
-var SITE_SALE_TITLE = 'Gundam 50th Anniversary Site-Wide Sale';
+var SITE_SALE_TITLE = 'Road to 50 Flash Sale';
 var SITE_SALE_TAGLINE =
-  'Celebrate 50 years of Mobile Suit Gundam — extra savings on HG, RG, MG & PG for the Road to 50';
+  'Countdown to the Mobile Suit Gundam 50th in 2029 — limited-time deals on HG, RG, MG & PG';
 
 var HERO_SLIDES = [
   {
@@ -15,7 +15,7 @@ var HERO_SLIDES = [
     image: IMG_CAROUSEL + 'neon-rx-78-2.png',
     alt: 'Neon wireframe illustration of the RX-78-2 Gundam',
     title: SITE_SALE_TITLE,
-    subtitle: 'Fifty years of the original Gundam — anniversary deals on classic kits',
+    subtitle: 'Flash deals on the original RX-78-2 — build toward the 50th in 2029',
     cta: { href: 'product.html#id=5', label: 'Shop RX-78-2' },
   },
   {
@@ -39,7 +39,7 @@ var HERO_SLIDES = [
     image: IMG_CAROUSEL + 'neon-00-qant.png',
     alt: 'Neon wireframe illustration of the 00 Qan[T] Gundam',
     title: '00 Qan[T] · Trans-Am Ready',
-    subtitle: 'Real Grade precision for the 50th anniversary',
+    subtitle: 'Real Grade precision — Road to 50 flash pricing',
     cta: { href: 'product.html#id=2', label: 'View RG Qan[T]' },
   },
   {

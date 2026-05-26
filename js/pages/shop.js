@@ -16,6 +16,17 @@ function initShopPage() {
 
   if (searchInput && query) searchInput.value = params.get('q');
 
+  var headerSearch = document.querySelector('#site-header .search__input');
+  if (headerSearch && params.get('q')) headerSearch.value = params.get('q');
+
+  if (searchInput && typeof initSearchAutocomplete === 'function') {
+    initSearchAutocomplete(searchInput, {
+      onSelect: function (product) {
+        window.location.href = productDetailUrl(product);
+      },
+    });
+  }
+
   gradeFilters.forEach(function (btn) {
     var g = btn.getAttribute('data-grade-filter');
     if (g === 'all' && !params.get('grade')) btn.classList.add('active');

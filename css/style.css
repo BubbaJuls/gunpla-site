@@ -555,6 +555,88 @@ main > .container {
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
+.search--autocomplete {
+  overflow: visible;
+  position: relative;
+  z-index: 50;
+}
+
+.search__inner {
+  flex: 1;
+  position: relative;
+  min-width: 0;
+  display: flex;
+  align-items: stretch;
+}
+
+.search--autocomplete .search__inner {
+  border-radius: var(--radius-pill) 0 0 var(--radius-pill);
+  overflow: hidden;
+  background: inherit;
+}
+
+.search-suggestions {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0.35rem;
+  list-style: none;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  max-height: min(360px, 60vh);
+  overflow-y: auto;
+  z-index: 300;
+}
+
+.search-suggestions__item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.search-suggestions__item:hover,
+.search-suggestions__item--active {
+  background: var(--accent-soft);
+}
+
+.search-suggestions__thumb {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: var(--radius);
+  background: var(--bg-warm);
+}
+
+.search-suggestions__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.search-suggestions__name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-suggestions__meta {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
 .search:focus-within {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-glow);
@@ -2508,6 +2590,30 @@ main > .page-hero {
 .chatbot-msg--bot a {
   color: var(--accent-dark);
   font-weight: 600;
+}
+
+.chatbot-product-line {
+  margin: 0.5rem 0 0;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.chatbot-product-line:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.chatbot-price__was {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.chatbot-price__off {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #b45309;
 }
 
 .chatbot-msg--user {

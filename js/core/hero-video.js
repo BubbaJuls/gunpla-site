@@ -1,8 +1,8 @@
-/** Local hero video — Gundam 50th Anniversary prologue */
+/** Local hero video — Road to 50 prologue (50th anniversary in 2029) */
 var HERO_VIDEO = {
   src: typeof VIDEO_HERO !== 'undefined' ? VIDEO_HERO : 'resources/videos/a-boy-with-gundam.mp4',
   title: 'A boy with GUNDAM',
-  subtitle: 'Mobile Suit Gundam 50th Anniversary — Road to 50 prologue',
+  subtitle: 'Official Road to 50 prologue — the 50th anniversary arrives in 2029',
   channel: 'GUNDAM CHANNEL INTL',
 };
 

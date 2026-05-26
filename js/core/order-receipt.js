@@ -148,7 +148,7 @@ function buildOrderReceiptHtml(order) {
     '" alt="" width="48" height="48" />' +
     '<div>' +
     '<p class="receipt__store">Gunpla Hobby <strong>PH</strong></p>' +
-    '<p class="receipt__tagline">Gundam 50th Anniversary Site-Wide Sale</p>' +
+    '<p class="receipt__tagline">Road to 50 Flash Sale · 50th in 2029</p>' +
     '</div></div>' +
     '<div class="receipt__title-block">' +
     '<h2 class="receipt__title">Order Confirmation</h2>' +

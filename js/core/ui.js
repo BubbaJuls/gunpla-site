@@ -9,7 +9,7 @@ function renderSiteHeader() {
   var page = getCurrentPage();
   var count = Cart.getItemCount();
 
-  var saleTitle = typeof SITE_SALE_TITLE !== 'undefined' ? SITE_SALE_TITLE : 'Gundam 50th Anniversary Site-Wide Sale';
+  var saleTitle = typeof SITE_SALE_TITLE !== 'undefined' ? SITE_SALE_TITLE : 'Road to 50 Flash Sale';
 
   el.innerHTML =
     '<div class="top-bar top-bar--sale">' +
@@ -22,13 +22,15 @@ function renderSiteHeader() {
     '<a href="index.html" class="logo">' +
     '<img src="' + IMG_BRAND + '" alt="Gunpla Hobby PH" />' +
     '<span>Gunpla Hobby <strong>PH</strong></span></a>' +
-    '<form class="search" action="catalog.html" method="get" role="search">' +
-    '<input type="search" name="q" placeholder="Search Gunpla kits…" aria-label="Search products" />' +
+    '<form class="search search--autocomplete" action="catalog.html" method="get" role="search">' +
+    '<div class="search__inner">' +
+    '<input type="search" name="q" class="search__input" placeholder="Search Gunpla kits…" aria-label="Search products" autocomplete="off" />' +
+    '<ul class="search-suggestions" role="listbox" hidden></ul></div>' +
     '<button type="submit" aria-label="Search">' +
     '<svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>' +
     '</button></form>' +
     '<nav class="nav" aria-label="Main">' +
-    navLink('index.html', '50th Anniversary', page) +
+    navLink('index.html', 'Road to 50', page) +
     navLink('shop.html', 'Shop Home', page) +
     navLink('catalog.html', 'Catalog', page) +
     navLink('about.html', 'About', page) +
@@ -47,6 +49,11 @@ function renderSiteHeader() {
       nav.classList.toggle('nav--open');
       toggle.classList.toggle('nav-toggle--open');
     });
+  }
+
+  if (typeof initSearchAutocomplete === 'function') {
+    var headerSearch = el.querySelector('.search__input');
+    if (headerSearch) initSearchAutocomplete(headerSearch);
   }
 }
 
