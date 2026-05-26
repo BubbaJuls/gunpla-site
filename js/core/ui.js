@@ -35,6 +35,7 @@ function renderSiteHeader() {
     navLink('catalog.html', 'Catalog', page) +
     navLink('about.html', 'About', page) +
     navLink('contact.html', 'Contact', page) +
+    renderAuthNavLink(page) +
     '<a href="cart.html" class="nav__cart' + (page === 'cart.html' ? ' active' : '') + '" aria-label="Cart, ' + count + ' items">' +
     '<svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>' +
     '<span class="cart-badge' + (count > 0 ? '' : ' cart-badge--hidden') + '" data-cart-badge>' + (count > 99 ? '99+' : count) + '</span></a>' +
@@ -55,10 +56,53 @@ function renderSiteHeader() {
     var headerSearch = el.querySelector('.search__input');
     if (headerSearch) initSearchAutocomplete(headerSearch);
   }
+
+  bindAuthNavActions(el);
 }
 
 function navLink(href, label, page) {
   return '<a href="' + href + '"' + (page === href ? ' class="active"' : '') + '>' + label + '</a>';
+}
+
+function renderAuthNavLink(page) {
+  if (typeof isLoggedIn !== 'function') {
+    return navLink('login.html', 'Sign In', page);
+  }
+
+  if (isLoggedIn()) {
+    var session = getAuthSession();
+    var name = session && session.name ? session.name.split(' ')[0] : 'Account';
+    return (
+      '<span class="nav__user" title="' +
+      (session ? session.email : '') +
+      '">Hi, ' +
+      name +
+      '</span>' +
+      '<button type="button" class="nav__logout" data-auth-logout>Sign Out</button>'
+    );
+  }
+
+  var loginHref = 'login.html';
+  var registerHref = 'register.html';
+  if (page !== 'login.html' && page !== 'register.html' && typeof window !== 'undefined') {
+    loginHref = 'login.html?next=' + encodeURIComponent(page);
+    registerHref = 'register.html?next=' + encodeURIComponent(page);
+  }
+  return (
+    navLink(registerHref, 'Register', page) + navLink(loginHref, 'Sign In', page)
+  );
+}
+
+function bindAuthNavActions(root) {
+  if (!root || typeof logout !== 'function') return;
+  var btn = root.querySelector('[data-auth-logout]');
+  if (!btn || btn.getAttribute('data-bound') === 'true') return;
+  btn.setAttribute('data-bound', 'true');
+  btn.addEventListener('click', function () {
+    logout();
+    showToast('Signed out.');
+    window.location.href = 'index.html';
+  });
 }
 
 function renderSiteFooter() {
@@ -178,6 +222,9 @@ function initSiteChrome() {
   updateCartBadge(false);
   document.addEventListener('cart-updated', function (e) {
     updateCartBadge(e.detail && e.detail.pulse);
+  });
+  document.addEventListener('auth-changed', function () {
+    renderSiteHeader();
   });
   if (typeof initChatbot === 'function') initChatbot();
 }

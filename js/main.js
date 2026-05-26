@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('hashchange', initProductPage);
   }
   else if (page === 'cart') initCartPage();
+  else if (page === 'login') initLoginPage();
+  else if (page === 'register') initRegisterPage();
   else if (page === 'checkout') initCheckoutPage();
   else if (page === 'order-confirmation') initOrderConfirmationPage();
   else if (page === 'contact') initContactForm();

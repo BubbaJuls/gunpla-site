@@ -8,6 +8,28 @@ function initCheckoutPage() {
     return;
   }
 
+  if (form && typeof isLoggedIn === 'function') {
+    if (!isLoggedIn()) {
+      var banner = document.createElement('p');
+      banner.className = 'checkout-login-banner';
+      banner.innerHTML =
+        'Optional: <a href="login.html?next=checkout.html">Sign in</a> to prefill your email (demo login).';
+      form.insertBefore(banner, form.firstChild);
+    } else {
+      var session = getAuthSession();
+      if (session) {
+        if (form.email && !form.email.value) form.email.value = session.email;
+        if (form.firstName && session.name && !form.firstName.value) {
+          form.firstName.value = session.name.split(' ')[0] || '';
+        }
+        if (form.lastName && session.name && !form.lastName.value) {
+          var parts = session.name.split(' ');
+          form.lastName.value = parts.length > 1 ? parts.slice(1).join(' ') : '';
+        }
+      }
+    }
+  }
+
   var subtotal = Cart.getSubtotal();
   var shipping = subtotal >= 3000 ? 0 : 150;
 

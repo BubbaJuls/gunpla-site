@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="resources/brand/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="resources/brand/logo.png" />
+  <title>Create Account — Gunpla Hobby PH</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page page--auth" data-page="register">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-hero page-hero--compact">
+      <div class="container">
+        <h1>Create Account</h1>
+        <p>Register for this demo shop — your account is saved in this browser only.</p>
+      </div>
+    </section>
+
+    <div class="container auth-layout">
+      <div class="auth-card">
+        <form id="register-form" class="auth-form">
+          <div id="register-error" class="auth-form__error" role="alert" hidden></div>
+
+          <div class="form-group">
+            <label for="register-name">Full name</label>
+            <input type="text" id="register-name" name="name" required autocomplete="name" placeholder="Juan Dela Cruz" />
+          </div>
+          <div class="form-group">
+            <label for="register-email">Email</label>
+            <input type="email" id="register-email" name="email" required autocomplete="email" placeholder="you@email.com" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="register-password">Password</label>
+              <input type="password" id="register-password" name="password" required autocomplete="new-password" minlength="6" placeholder="At least 6 characters" />
+            </div>
+            <div class="form-group">
+              <label for="register-confirm">Confirm password</label>
+              <input type="password" id="register-confirm" name="confirmPassword" required autocomplete="new-password" minlength="6" placeholder="Repeat password" />
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--lg btn--full">Create Account</button>
+        </form>
+
+        <p class="auth-form__footer">
+          Already have an account?
+          <a href="login.html">Sign in</a>
+          · or <a href="shop.html">continue as guest</a>.
+        </p>
+      </div>
+
+      <aside class="auth-demo card">
+        <h2>Demo note</h2>
+        <p class="auth-demo__note">
+          This is a <strong>school project</strong> registration flow. New accounts are stored in
+          <strong>localStorage</strong> on your device — not on a real server.
+        </p>
+        <ul class="auth-demo__tips">
+          <li>Use any email that isn’t already taken</li>
+          <li>Password must be at least 6 characters</li>
+          <li>After registering, you’ll be signed in automatically</li>
+          <li>Preset demo logins still work on the <a href="login.html">sign-in page</a></li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/core/data.js"></script>
+  <script src="js/core/cart.js"></script>
+  <script src="js/core/auth.js"></script>
+  <script src="js/core/search-autocomplete.js"></script>
+  <script src="js/core/ui.js"></script>
+  <script src="js/pages/register-page.js"></script>
+  <script src="js/core/animations.js"></script>
+  <script src="js/core/chatbot.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
