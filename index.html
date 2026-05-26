@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="public/images/logo.png" type="image/png" />
-  <link rel="apple-touch-icon" href="public/images/logo.png" />
+  <link rel="icon" href="resources/brand/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="resources/brand/logo.png" />
   <title>Gunpla Hobby PH — Authentic Bandai Gunpla Kits</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -12,16 +12,16 @@
   <div id="site-header"></div>
 
   <main>
-    <div id="hero-carousel"></div>
+    <div id="hero-video"></div>
 
     <section class="categories">
       <div class="container">
         <div class="categories__grid">
           <a href="catalog.html" class="category-chip"><span class="category-chip__icon">All</span>All Kits</a>
           <a href="catalog.html?grade=RG" class="category-chip"><span class="category-chip__icon">RG</span>Real Grade</a>
-          <a href="catalog.html?grade=HG" class="category-chip category-chip--soon"><span class="category-chip__icon">HG</span>High Grade <small>Soon</small></a>
-          <a href="catalog.html?grade=MG" class="category-chip category-chip--soon"><span class="category-chip__icon">MG</span>Master Grade <small>Soon</small></a>
-          <a href="catalog.html?grade=PG" class="category-chip category-chip--soon"><span class="category-chip__icon">PG</span>Perfect Grade <small>Soon</small></a>
+          <a href="catalog.html?grade=HG" class="category-chip"><span class="category-chip__icon">HG</span>High Grade</a>
+          <a href="catalog.html?grade=MG" class="category-chip"><span class="category-chip__icon">MG</span>Master Grade</a>
+          <a href="catalog.html?grade=PG" class="category-chip"><span class="category-chip__icon">PG</span>Perfect Grade</a>
           <a href="catalog.html" class="category-chip"><span class="category-chip__icon">%</span>On Sale</a>
         </div>
       </div>
@@ -50,7 +50,7 @@
 
     <div class="container promo-grid">
       <a href="catalog.html?grade=RG" class="promo-banner">
-        <img src="public/images/rg-unicorn.png" alt="RG Unicorn Gundam" />
+        <img src="resources/products/rg-unicorn-box.jpg" alt="RG Unicorn Gundam" />
         <div class="promo-banner__overlay"></div>
         <div class="promo-banner__content">
           <h3>Real Grade Collection</h3>
@@ -59,7 +59,7 @@
         </div>
       </a>
       <a href="product.html#id=5" class="promo-banner">
-        <img src="public/images/rg-rx-78-2.png" alt="RG RX-78-2" />
+        <img src="resources/products/rg-rx-78-2-box.jpg" alt="RG RX-78-2" />
         <div class="promo-banner__overlay"></div>
         <div class="promo-banner__content">
           <h3>Start Your Build</h3>
@@ -79,31 +79,40 @@
       </div>
     </section>
 
-    <section class="section section--coming-soon">
+    <section class="section">
       <div class="container">
         <div class="section__head">
-          <h2>Coming Soon</h2>
-          <p class="section__sub">More grades on the way — stay tuned.</p>
+          <h2>Shop by Grade</h2>
+          <a href="catalog.html">Browse All →</a>
         </div>
-        <div class="coming-soon-grid">
-          <article class="coming-soon-card">
-            <span class="coming-soon-card__grade">HG</span>
-            <h3>High Grade</h3>
-            <p>Quick, affordable builds perfect for beginners and practice panel lining.</p>
-            <span class="coming-soon-card__badge">Photos & listings soon</span>
-          </article>
-          <article class="coming-soon-card">
-            <span class="coming-soon-card__grade">MG</span>
-            <h3>Master Grade</h3>
-            <p>Larger scale, inner frames, and flagship detail for serious builders.</p>
-            <span class="coming-soon-card__badge">Photos & listings soon</span>
-          </article>
-          <article class="coming-soon-card">
-            <span class="coming-soon-card__grade">PG</span>
-            <h3>Perfect Grade</h3>
-            <p>Premium kits with incredible size and engineering — the ultimate display pieces.</p>
-            <span class="coming-soon-card__badge">Photos & listings soon</span>
-          </article>
+        <div class="promo-grid promo-grid--grades">
+          <a href="catalog.html?grade=HG" class="promo-banner">
+            <img src="resources/products/hg-barbatos-box.jpg" alt="High Grade Gundam Barbatos" />
+            <div class="promo-banner__overlay"></div>
+            <div class="promo-banner__content">
+              <h3>High Grade</h3>
+              <p>10 kits — fast builds from ₱750</p>
+              <span class="btn btn--primary btn--sm">Shop HG</span>
+            </div>
+          </a>
+          <a href="catalog.html?grade=MG" class="promo-banner">
+            <img src="resources/products/mg-sazabi-verka-box.jpg" alt="Master Grade Sazabi Ver.Ka" />
+            <div class="promo-banner__overlay"></div>
+            <div class="promo-banner__content">
+              <h3>Master Grade</h3>
+              <p>10 kits — 1/100 inner frames</p>
+              <span class="btn btn--primary btn--sm">Shop MG</span>
+            </div>
+          </a>
+          <a href="catalog.html?grade=PG" class="promo-banner">
+            <img src="resources/products/pg-unicorn-box.jpg" alt="Perfect Grade Unicorn Gundam" />
+            <div class="promo-banner__overlay"></div>
+            <div class="promo-banner__content">
+              <h3>Perfect Grade</h3>
+              <p>5 kits — premium 1/60 builds</p>
+              <span class="btn btn--primary btn--sm">Shop PG</span>
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -122,15 +131,16 @@
 
   <div id="site-footer"></div>
 
-  <script src="js/data.js"></script>
-  <script src="js/cart.js"></script>
-  <script src="js/seed-reviews.js"></script>
-  <script src="js/reviews.js"></script>
-  <script src="js/carousel.js"></script>
-  <script src="js/ui.js"></script>
-  <script src="js/home.js"></script>
-  <script src="js/animations.js"></script>
-  <script src="js/chatbot.js"></script>
+  <script src="js/core/data.js"></script>
+  <script src="js/core/cart.js"></script>
+  <script src="js/core/seed-reviews.js"></script>
+  <script src="js/core/seed-reviews-hgmpg.js"></script>
+  <script src="js/core/reviews.js"></script>
+  <script src="js/hero-video.js"></script>
+  <script src="js/core/ui.js"></script>
+  <script src="js/pages/home.js"></script>
+  <script src="js/core/animations.js"></script>
+  <script src="js/core/chatbot.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
