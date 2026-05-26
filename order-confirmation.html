@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="resources/brand/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="resources/brand/logo.png" />
+  <title>Order Confirmation — Gunpla Hobby PH</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page" data-page="order-confirmation">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Order Confirmed</h1>
+        <p>Thank you! Your order <strong id="confirmation-order-id"></strong> has been placed.</p>
+      </div>
+    </section>
+
+    <div class="container checkout-receipt-wrap">
+      <div id="order-receipt" class="order-receipt" role="document" aria-label="Order receipt"></div>
+      <div class="checkout-receipt-actions no-print">
+        <button type="button" class="btn btn--outline" id="print-receipt">Print Receipt</button>
+        <a href="catalog.html" class="btn btn--primary">Continue Shopping</a>
+        <a href="shop.html" class="btn btn--outline">Shop Home</a>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/core/data.js"></script>
+  <script src="js/core/cart.js"></script>
+  <script src="js/core/order-receipt.js"></script>
+  <script src="js/core/ui.js"></script>
+  <script src="js/pages/order-confirmation-page.js"></script>
+  <script src="js/core/animations.js"></script>
+  <script src="js/core/chatbot.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

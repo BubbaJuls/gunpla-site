@@ -12,6 +12,7 @@
     { "source": "/contact", "destination": "/contact.html" },
     { "source": "/cart", "destination": "/cart.html" },
     { "source": "/checkout", "destination": "/checkout.html" },
+    { "source": "/order-confirmation", "destination": "/order-confirmation.html" },
     { "source": "/product", "destination": "/product.html" }
   ]
 }

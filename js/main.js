@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   else if (page === 'cart') initCartPage();
   else if (page === 'checkout') initCheckoutPage();
+  else if (page === 'order-confirmation') initOrderConfirmationPage();
   else if (page === 'contact') initContactForm();
 });
 

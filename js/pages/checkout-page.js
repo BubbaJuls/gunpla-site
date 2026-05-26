@@ -18,27 +18,56 @@ function initCheckoutPage() {
         if (!p) return '';
         return (
           '<div class="checkout-line">' +
-          '<span>' + p.name + ' × ' + item.quantity + '</span>' +
-          '<span>' + formatPrice(p.price * item.quantity) + '</span></div>'
+          '<span>' +
+          p.name +
+          ' (' +
+          p.grade +
+          ') × ' +
+          item.quantity +
+          '</span>' +
+          '<span>' +
+          formatPrice(p.price * item.quantity) +
+          '</span></div>'
         );
       })
       .join('');
 
     summary.innerHTML =
+      '<h2>Order Summary</h2>' +
       lines +
-      '<div class="checkout-line"><span>Subtotal</span><span>' + formatPrice(subtotal) + '</span></div>' +
-      '<div class="checkout-line"><span>Shipping</span><span>' + (shipping === 0 ? 'FREE' : formatPrice(shipping)) + '</span></div>' +
-      '<div class="checkout-line checkout-line--total"><span>Total</span><span>' + formatPrice(subtotal + shipping) + '</span></div>';
+      '<div class="checkout-line"><span>Subtotal</span><span>' +
+      formatPrice(subtotal) +
+      '</span></div>' +
+      '<div class="checkout-line"><span>Shipping</span><span>' +
+      (shipping === 0 ? 'FREE' : formatPrice(shipping)) +
+      '</span></div>' +
+      '<div class="checkout-line checkout-line--total"><span>Total</span><span>' +
+      formatPrice(subtotal + shipping) +
+      '</span></div>';
   }
 
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+
+      var cartSnapshot = Cart.getItems();
+      var orderData = buildOrderFromCart(cartSnapshot);
+      var customer = getCheckoutFormData(form);
+
+      var order = {
+        id: generateOrderId(),
+        placedAt: new Date(),
+        customer: customer,
+        lines: orderData.lines,
+        subtotal: orderData.subtotal,
+        shipping: orderData.shipping,
+        total: orderData.total,
+        itemCount: orderData.itemCount,
+      };
+
+      saveLastOrder(order);
       Cart.clear();
-      document.getElementById('checkout-success').hidden = false;
-      form.hidden = true;
-      if (summary) summary.hidden = true;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.location.href = 'order-confirmation.html';
     });
   }
 }
