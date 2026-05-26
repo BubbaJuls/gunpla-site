@@ -3,7 +3,10 @@ var IMG_PRODUCTS = RES + 'products/';
 var IMG_CAROUSEL = RES + 'carousel/';
 var IMG_BRAND = RES + 'brand/logo.png';
 var IMG_SITE = RES + 'site/bg-ibo.jpg';
-var VIDEO_HERO = RES + 'videos/a-boy-with-gundam.mp4';
+/** Local dev: MP4 in resources/videos. Production (Vercel): YouTube embed in hero-video.js */
+var VIDEO_HERO_LOCAL = RES + 'videos/a-boy-with-gundam.mp4';
+var VIDEO_HERO_YOUTUBE_ID = 'Zt62nsFLqA0';
+var VIDEO_HERO_YOUTUBE_WATCH = 'https://www.youtube.com/watch?v=Zt62nsFLqA0';
 
 var SITE_SALE_TITLE = 'Road to 50 Flash Sale';
 var SITE_SALE_TAGLINE =

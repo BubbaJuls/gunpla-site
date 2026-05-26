@@ -131,6 +131,17 @@ main {
   background: #000;
 }
 
+.hero-video__player--embed {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  object-fit: unset;
+}
+
+.hero-video--youtube .hero-video__frame {
+  aspect-ratio: 16 / 9;
+}
+
 .hero-video__caption {
   display: flex;
   flex-wrap: wrap;

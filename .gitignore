@@ -12,8 +12,8 @@ dist
 dist-ssr
 public/
 
-# Large media (add to git with LFS if needed)
-# resources/videos/*.mp4
+# Large hero MP4 — keep locally; production uses YouTube (see README)
+resources/videos/*.mp4
 *.local
 
 # Editor directories and files
